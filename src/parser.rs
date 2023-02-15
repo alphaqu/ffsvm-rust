@@ -192,13 +192,13 @@ impl<'a> TryFrom<&'a str> for ModelFile<'a> {
 
         Ok(ModelFile {
             header: Header {
-                svm_type: svm_type?,
-                kernel_type: kernel_type?,
+                svm_type: svm_type.ok_or(())?,
+                kernel_type: kernel_type.ok_or(())?,
                 gamma,
                 coef0,
                 degree,
-                nr_class: nr_class?,
-                total_sv: total_sv?,
+                nr_class: nr_class.ok_or(())?,
+                total_sv: total_sv.ok_or(())?,
                 rho,
                 label,
                 prob_a,

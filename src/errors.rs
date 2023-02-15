@@ -1,6 +1,5 @@
 use std::{
     num::{ParseFloatError, ParseIntError},
-    option::NoneError,
 };
 
 /// Possible error types when classifying with one of the SVMs.
@@ -50,8 +49,8 @@ pub enum Error {
 //     }
 // }
 
-impl From<NoneError> for Error {
-    fn from(_: NoneError) -> Self { Error::Parsing("NoneError".to_owned()) }
+impl From<()> for Error {
+    fn from(_: ()) -> Self { Error::Parsing("NoneError".to_owned()) }
 }
 
 impl From<ParseFloatError> for Error {

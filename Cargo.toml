@@ -23,8 +23,8 @@ path = "src/lib.rs"
 crate-type = [ "rlib" ]
 
 [dependencies]
-simd_aligned = "0.2"
-packed_simd = "0.3"
+simd_aligned = { git = "https://github.com/alphaqu/simd_aligned_rust" }
+packed_simd = { version = "0.3", package = "packed_simd_2" }
 
 [dev-dependencies]
 rand = "0.6"
